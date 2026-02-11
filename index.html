@@ -508,53 +508,95 @@
     line-height: 1.5;
   }
 
-  /* ─── TESTIMONIALS / SOCIAL PROOF ─── */
-  .proof { background: var(--paper-warm); }
+  /* ─── BY THE NUMBERS ─── */
+  .numbers { background: var(--paper-warm); }
 
-  .proof-grid {
+  .numbers-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
     margin-top: 3rem;
   }
 
-  .proof-card {
-    padding: 2rem;
+  .number-card {
+    padding: 2rem 1.5rem;
     background: white;
     border-radius: 6px;
     border: 1px solid var(--border);
     position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
   }
 
-  .proof-quote {
+  .number-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.07);
+    border-color: var(--accent);
+  }
+
+  .number-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-glow));
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+  }
+
+  .number-card:hover::before { transform: scaleX(1); }
+
+  .number-value {
     font-family: var(--ff-display);
-    font-size: 3rem;
+    font-size: 2.6rem;
+    font-weight: 800;
     color: var(--accent);
     line-height: 1;
-    opacity: 0.3;
-    position: absolute;
-    top: 1rem;
-    left: 1.5rem;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
   }
 
-  .proof-text {
-    font-size: 0.95rem;
-    color: var(--ink-light);
-    line-height: 1.7;
-    font-style: italic;
-    margin-bottom: 1.25rem;
-    padding-top: 1.5rem;
-  }
-
-  .proof-author {
-    font-size: 0.85rem;
+  .number-label {
+    font-family: var(--ff-display);
+    font-size: 1rem;
     font-weight: 600;
     color: var(--ink);
+    margin-bottom: 0.5rem;
+    line-height: 1.3;
   }
 
-  .proof-role {
-    font-size: 0.78rem;
+  .number-detail {
+    font-size: 0.82rem;
     color: var(--muted);
+    line-height: 1.6;
+  }
+
+  .number-source {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-size: 0.7rem;
+    font-family: var(--ff-mono);
+    color: var(--muted-light);
+    letter-spacing: 0.02em;
+  }
+
+  .numbers-cta {
+    text-align: center;
+    margin-top: 3rem;
+    font-size: 1.1rem;
+    color: var(--ink-light);
+    line-height: 1.7;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .numbers-cta strong {
+    color: var(--accent);
+    font-weight: 700;
   }
 
   /* ─── AUTHOR ─── */
@@ -733,7 +775,7 @@
     .about-grid { grid-template-columns: 1fr; gap: 2rem; }
     .parts-grid { grid-template-columns: 1fr 1fr; }
     .audience-grid { grid-template-columns: repeat(3, 1fr); }
-    .proof-grid { grid-template-columns: 1fr; }
+    .numbers-grid { grid-template-columns: 1fr 1fr; }
     .author-content { grid-template-columns: 1fr; justify-items: center; text-align: center; }
   }
 
@@ -770,7 +812,7 @@
     <h1>The Augmented<br><em>Developer</em></h1>
     <p class="hero-subtitle">Leveraging Generative AI for Holistic Career Success</p>
     <p class="hero-description">
-      Generative AI isn't just a coding tool — it's your career accelerator. This book gives you the complete blueprint to leverage AI for everything from shipping better code to landing dream roles, negotiating higher compensation, and building a lasting professional brand.
+      Anthropic CEO Dario Amodei recently predicted that AI will handle "most, maybe all" software engineering tasks within months — and that engineers at his own company are already shifting from writing code to editing and reviewing AI-generated output. The role is being redefined in real time. This book gives you the complete blueprint to stay ahead: leveraging AI not just for shipping better code, but for landing dream roles, negotiating higher compensation, and building a lasting professional brand.
     </p>
     <div class="hero-cta">
       <a href="#buy" class="btn-primary">Get the Book →</a>
@@ -795,10 +837,10 @@
   <div class="about-grid">
     <div class="about-narrative reveal">
       <p>
-        Only <strong>23% of developers</strong> have moved beyond basic code completion with AI. The rest are leaving enormous value on the table — not just in their code, but in their careers.
+        The developer's role is undergoing its biggest transformation in a generation. AI capabilities are following what industry leaders call a <strong>"Moore's Law for intelligence"</strong> — doubling every few months — and analysts warn that 50% of entry-level white-collar jobs will be significantly impacted within 1–5 years. Engineers at leading AI companies are already shifting from writing code to editing, reviewing, and orchestrating AI-generated output.
       </p>
       <p>
-        <strong>The Augmented Developer</strong> bridges that gap. Across 26 chapters and six focused parts, this book walks you through integrating AI into every facet of your professional life: from planning architecture and writing tests to crafting resumes that pass ATS filters, acing system design interviews, and negotiating compensation packages worth tens of thousands more.
+        The question is no longer <em>whether</em> AI will reshape your career — it's whether you'll be the one directing the change or reacting to it. <strong>The Augmented Developer</strong> bridges that gap. Across 26 chapters and six focused parts, this book walks you through integrating AI into every facet of your professional life: from planning architecture and writing tests to crafting resumes that pass ATS filters, acing system design interviews, and negotiating compensation packages worth tens of thousands more.
       </p>
       <p>
         Every recommendation is evidence-based and paired with measurable outcomes. No hype, no hand-waving — just practical frameworks, real prompts, and actionable playbooks you can start using this week.
@@ -916,31 +958,41 @@
   </div>
 </section>
 
-<!-- ─── SOCIAL PROOF ─── -->
-<section class="proof" id="praise">
+<!-- ─── BY THE NUMBERS ─── -->
+<section class="numbers" id="numbers">
   <div class="reveal">
-    <div class="section-label">Early Praise</div>
-    <div class="section-title">What readers are saying</div>
+    <div class="section-label">The AI Career Gap</div>
+    <div class="section-title">The opportunity is massive.<br>Most developers are missing it.</div>
+    <p class="section-subtitle">The data is clear: AI skills are reshaping careers, compensation, and hiring — and the gap between those who adapt and those who don't is widening fast.</p>
   </div>
-  <div class="proof-grid reveal">
-    <div class="proof-card">
-      <div class="proof-quote">"</div>
-      <p class="proof-text">This isn't another 'how to use ChatGPT' book. It's a career operating system. I used the negotiation scripts and landed a $35K higher offer than I would have settled for.</p>
-      <div class="proof-author">Priya Sharma</div>
-      <div class="proof-role">Senior Backend Developer, Fintech Startup</div>
+  <div class="numbers-grid reveal">
+    <div class="number-card">
+      <div class="number-value">84%</div>
+      <div class="number-label">Developers using or planning to use AI</div>
+      <div class="number-detail">Yet only 29% trust the accuracy of their AI output — revealing a massive skill gap between adoption and effective use.</div>
+      <span class="number-source">Stack Overflow Survey 2025</span>
     </div>
-    <div class="proof-card">
-      <div class="proof-quote">"</div>
-      <p class="proof-text">The debugging and code review chapters alone saved our team 15 hours a week. We bought copies for every engineer on the team.</p>
-      <div class="proof-author">Marcus Chen</div>
-      <div class="proof-role">Engineering Manager, Series C SaaS Company</div>
+    <div class="number-card">
+      <div class="number-value">25%</div>
+      <div class="number-label">Salary premium for AI-skilled roles</div>
+      <div class="number-detail">Developers with demonstrable AI skills earn up to 25% more than peers in equivalent technical positions without AI expertise.</div>
+      <span class="number-source">PwC Global AI Jobs Barometer 2025</span>
     </div>
-    <div class="proof-card">
-      <div class="proof-quote">"</div>
-      <p class="proof-text">As someone transitioning from QA to development, the structured learning paths and portfolio-building chapters gave me a concrete roadmap. Got my first dev role within 4 months.</p>
-      <div class="proof-author">Amara Okafor</div>
-      <div class="proof-role">Junior Full-Stack Developer, Digital Agency</div>
+    <div class="number-card">
+      <div class="number-value">76%</div>
+      <div class="number-label">Don't use AI beyond code completion</div>
+      <div class="number-detail">Most developers haven't integrated AI into deployment, planning, career strategy, or professional growth — leaving enormous value on the table.</div>
+      <span class="number-source">Stack Overflow Survey 2025</span>
     </div>
+    <div class="number-card">
+      <div class="number-value">26%</div>
+      <div class="number-label">Average productivity increase</div>
+      <div class="number-detail">Field studies show developers who use AI strategically achieve an average 26% productivity boost, with 68% saving 10+ hours per week.</div>
+      <span class="number-source">Industry Field Studies 2024–25</span>
+    </div>
+  </div>
+  <div class="numbers-cta reveal">
+    <p>We're entering what many are calling AI's <em>"adolescence"</em> — a turbulent phase that will test every professional's adaptability. The developers who thrive won't be the ones who simply <em>use</em> AI — they'll be the ones who use it <strong>strategically across their entire career</strong>. This book shows you how, starting this week.</p>
   </div>
 </section>
 
