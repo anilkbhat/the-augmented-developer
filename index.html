@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>The Augmented Developer — Leveraging Generative AI for Holistic Career Success</title>
-<meta name="description" content="The definitive guide for developers who want to leverage AI not just for coding, but for complete career mastery. By Anil.">
+<meta name="description" content="The definitive guide for developers who want to leverage AI not just for coding, but for complete career mastery. By Anil Bhat.">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
@@ -258,10 +258,8 @@
   }
 
   .book-cover {
-    width: 320px;
-    height: 460px;
-    background: linear-gradient(135deg, var(--ink) 0%, #252542 40%, var(--ink-light) 100%);
-    border-radius: 4px 16px 16px 4px;
+    width: 340px;
+    border-radius: 4px 12px 12px 4px;
     position: relative;
     transform: rotateY(-18deg) rotateX(3deg);
     transform-style: preserve-3d;
@@ -272,7 +270,7 @@
       -8px 0 0 #2a2a3e,
       -10px 0 0 #1a1a2e,
       20px 30px 60px rgba(0, 0, 0, 0.35),
-      0 0 120px rgba(196, 85, 58, 0.08);
+      0 0 120px rgba(70, 140, 200, 0.1);
     transition: transform 0.5s ease;
     overflow: hidden;
   }
@@ -281,94 +279,20 @@
     transform: rotateY(-12deg) rotateX(2deg) translateY(-5px);
   }
 
-  .book-cover::before {
+  .book-cover img {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: inherit;
+  }
+
+  .book-cover::after {
     content: '';
     position: absolute;
     inset: 0;
-    background:
-      repeating-linear-gradient(90deg, transparent, transparent 1px, rgba(255,255,255,0.01) 1px, rgba(255,255,255,0.01) 2px),
-      linear-gradient(180deg, rgba(255,255,255,0.05) 0%, transparent 30%, transparent 70%, rgba(0,0,0,0.1) 100%);
+    background: linear-gradient(105deg, rgba(255,255,255,0.12) 0%, transparent 40%, transparent 60%, rgba(0,0,0,0.08) 100%);
     border-radius: inherit;
     pointer-events: none;
-  }
-
-  .book-inner {
-    padding: 3rem 2.5rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    position: relative;
-    z-index: 2;
-  }
-
-  .book-top-accent {
-    width: 50px;
-    height: 3px;
-    background: var(--accent);
-    margin-bottom: 1rem;
-  }
-
-  .book-title {
-    font-family: var(--ff-display);
-    font-size: 1.65rem;
-    font-weight: 700;
-    color: #f0ece6;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    margin-bottom: 0.75rem;
-  }
-
-  .book-title em {
-    color: var(--accent-glow);
-    font-style: normal;
-  }
-
-  .book-subtitle-cover {
-    font-family: var(--ff-body);
-    font-size: 0.75rem;
-    color: rgba(240, 236, 230, 0.6);
-    font-weight: 300;
-    line-height: 1.5;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-  }
-
-  .book-bottom {
-    border-top: 1px solid rgba(255,255,255,0.1);
-    padding-top: 1.25rem;
-  }
-
-  .book-author {
-    font-family: var(--ff-body);
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: rgba(240, 236, 230, 0.7);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-  }
-
-  .book-decoration {
-    position: absolute;
-    bottom: 3rem;
-    right: 2rem;
-    width: 80px;
-    height: 80px;
-    border: 1px solid rgba(196, 85, 58, 0.3);
-    border-radius: 50%;
-    opacity: 0.4;
-  }
-
-  .book-decoration::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 40px;
-    height: 40px;
-    border: 1px solid rgba(196, 85, 58, 0.3);
-    border-radius: 50%;
   }
 
   /* ─── SECTION SHARED ─── */
@@ -753,13 +677,6 @@
     margin-bottom: 0.5rem;
   }
 
-  .buy-price {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--accent-glow);
-    margin-bottom: 0.75rem;
-  }
-
   .buy-note {
     font-size: 0.78rem;
     color: rgba(250, 248, 245, 0.45);
@@ -811,9 +728,7 @@
   @media (max-width: 1024px) {
     .hero { grid-template-columns: 1fr; padding: 7rem 2rem 3rem; gap: 3rem; }
     .hero-book { order: -1; }
-    .book-cover { width: 240px; height: 345px; }
-    .book-title { font-size: 1.3rem; }
-    .book-inner { padding: 2rem 1.5rem; }
+    .book-cover { width: 240px; }
     section { padding: 4rem 2rem; }
     .about-grid { grid-template-columns: 1fr; gap: 2rem; }
     .parts-grid { grid-template-columns: 1fr 1fr; }
@@ -865,17 +780,7 @@
   <div class="hero-book">
     <div class="book-3d">
       <div class="book-cover">
-        <div class="book-inner">
-          <div>
-            <div class="book-top-accent"></div>
-            <div class="book-title">The Augmented <em>Developer</em></div>
-            <div class="book-subtitle-cover">Leveraging Generative AI<br>for Holistic Career Success</div>
-          </div>
-          <div class="book-bottom">
-            <div class="book-author">Anil</div>
-          </div>
-          <div class="book-decoration"></div>
-        </div>
+        <img src="book-cover.png" alt="The Augmented Developer — Book Cover by Anil Bhat">
       </div>
     </div>
   </div>
@@ -1046,10 +951,10 @@
     <div class="section-title">Written by a developer, for developers.</div>
   </div>
   <div class="author-content reveal">
-    <div class="author-avatar">A</div>
+    <div class="author-avatar">AB</div>
     <div class="author-bio">
       <p>
-        <strong>Anil</strong> is a seasoned technologist who has spent years at the intersection of software engineering and career development. Having navigated the full spectrum — from individual contributor to technical leadership — he understands the challenges developers face at every level.
+        <strong>Anil Bhat</strong> is a seasoned technologist who has spent years at the intersection of software engineering and career development. Having navigated the full spectrum — from individual contributor to technical leadership — he understands the challenges developers face at every level.
       </p>
       <p>
         Frustrated by the gap between AI's potential and how most developers actually use it, he wrote <em>The Augmented Developer</em> to provide the practical, no-hype guide he wished he'd had. Every framework in this book has been tested in real workflows, real job searches, and real career negotiations.
@@ -1066,30 +971,27 @@
     <p class="buy-subtitle">Available in digital and print formats. Every purchase includes access to the companion website with updated tool directories and bonus materials.</p>
   </div>
   <div class="buy-options reveal">
-    <a href="https://www.amazon.com" target="_blank" rel="noopener" class="buy-card">
-      <div class="buy-platform">Amazon</div>
-      <div class="buy-format">Kindle eBook</div>
-      <div class="buy-price">$14.99</div>
-      <div class="buy-note">Instant delivery · Read on any device</div>
+    <a href="https://www.amazon.in/dp/B0GM34B6K5" target="_blank" rel="noopener" class="buy-card featured">
+      <div class="buy-platform">Amazon India</div>
+      <div class="buy-format">Kindle &amp; Paperback</div>
+      <div class="buy-note">Available on Amazon.in · Kindle instant delivery</div>
     </a>
-    <a href="https://www.amazon.com" target="_blank" rel="noopener" class="buy-card featured">
-      <div class="buy-platform">Amazon</div>
+    <a href="https://notionpress.com/in/read/the-augmented-developer" target="_blank" rel="noopener" class="buy-card">
+      <div class="buy-platform">Notion Press</div>
+      <div class="buy-format">eBook &amp; Print</div>
+      <div class="buy-note">Read online or order your copy directly</div>
+    </a>
+    <a href="https://www.flipkart.com/the-augmented-developer/p/itm15be34c1443ca?pid=9798902960164&affid=editornoti" target="_blank" rel="noopener" class="buy-card">
+      <div class="buy-platform">Flipkart</div>
       <div class="buy-format">Paperback</div>
-      <div class="buy-price">$29.99</div>
-      <div class="buy-note">178 pages · Free shipping with Prime</div>
-    </a>
-    <a href="https://gumroad.com" target="_blank" rel="noopener" class="buy-card">
-      <div class="buy-platform">Gumroad</div>
-      <div class="buy-format">PDF + ePub Bundle</div>
-      <div class="buy-price">$19.99</div>
-      <div class="buy-note">DRM-free · Includes future updates</div>
+      <div class="buy-note">Fast delivery across India</div>
     </a>
   </div>
 </section>
 
 <!-- ─── FOOTER ─── -->
 <footer>
-  <div>© 2025 Anil. All rights reserved.</div>
+  <div>© 2025 Anil Bhat. All rights reserved.</div>
   <div class="footer-links">
     <a href="mailto:hello@example.com">Contact</a>
     <a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a>
